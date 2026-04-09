@@ -1,5 +1,4 @@
 import { MapPin, Phone } from "lucide-react";
-import { Button } from "../ui/Button";
 import { companyInfo } from "../../data/content";
 
 export const FooterSection = () => {
