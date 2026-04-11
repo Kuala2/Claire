@@ -23,9 +23,9 @@ export const HeroSection = () => {
 
       {/* Heavy overlay for maximum focus on text */}
       {/* 1. Subtle top gradient for header readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent z-[1] h-32" />
-      {/* 2. Heavy black mask for text contrast */}
-      <div className="absolute inset-0 bg-black/60 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-transparent z-[1] h-48" />
+      {/* 2. Heavy black mask for text contrast with subtle blur */}
+      <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px] z-[1]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center py-20">
 
@@ -33,16 +33,21 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-3 px-6 sm:px-8 py-3 sm:py-3 rounded-[2rem] sm:rounded-full bg-white border-2 border-primary/20 text-gray-900 mb-6 sm:mb-10 shadow-2xl"
+          className="inline-flex items-center gap-4 px-8 py-3 rounded-full bg-white border border-gray-200 text-gray-900 mb-8 shadow-2xl overflow-hidden"
         >
           <div className="flex gap-1">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-5 h-5 text-primary fill-primary" />
+              <Star key={i} className="w-5 h-5 text-[#f59e0b] fill-[#f59e0b]" />
             ))}
           </div>
-          <span className="text-xs sm:text-lg font-bold tracking-tight text-center max-w-[200px] sm:max-w-none">
-            {heroContent.badgeText}
+          <div className="h-5 w-[1px] bg-gray-200 mx-1 hidden sm:block" />
+          <span className="text-base sm:text-lg font-black tracking-tight text-gray-950">
+            Лучший салон красоты 2025 по версии
           </span>
+          <div className="flex items-center gap-1.5 bg-[#66cc33]/15 px-3 py-1 rounded-lg border border-[#66cc33]/30">
+            <img src="/assets/2gis_logo.png" alt="2GIS" className="h-5 w-5 object-contain" />
+            <span className="text-[#166534] font-black text-lg tracking-tighter">2ГИС</span>
+          </div>
         </motion.div>
 
         <motion.h1
