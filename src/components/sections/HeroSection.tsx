@@ -33,20 +33,24 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-4 px-8 py-3 rounded-full bg-white border border-gray-200 text-gray-900 mb-8 shadow-2xl overflow-hidden"
+          className="inline-flex flex-col sm:flex-row items-center gap-1.5 sm:gap-4 px-4 py-2 sm:px-8 sm:py-3 rounded-[1.5rem] sm:rounded-full bg-white border border-gray-200 text-gray-900 mb-8 shadow-2xl overflow-hidden"
         >
-          <div className="flex gap-1">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-5 h-5 text-[#f59e0b] fill-[#f59e0b]" />
-            ))}
+          <div className="flex items-center gap-2">
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#f59e0b] fill-[#f59e0b]" />
+              ))}
+            </div>
+            <div className="h-4 w-[1px] bg-gray-200 hidden sm:block" />
           </div>
-          <div className="h-5 w-[1px] bg-gray-200 mx-1 hidden sm:block" />
-          <span className="text-base sm:text-lg font-black tracking-tight text-gray-950">
+          
+          <span className="text-[13px] sm:text-lg font-black tracking-tight text-gray-950 text-center leading-none">
             Лучший салон красоты 2025 по версии
           </span>
-          <div className="flex items-center gap-1.5 bg-[#66cc33]/15 px-3 py-1 rounded-lg border border-[#66cc33]/30">
-            <img src="/assets/2gis_logo.png" alt="2GIS" className="h-5 w-5 object-contain" />
-            <span className="text-[#166534] font-black text-lg tracking-tighter">2ГИС</span>
+          
+          <div className="flex items-center gap-1.5 bg-[#66cc33]/15 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg border border-[#66cc33]/30">
+            <img src="/assets/2gis_logo.png" alt="2GIS" className="h-4 w-4 sm:h-5 sm:w-5 object-contain" />
+            <span className="text-[#166534] font-black text-base sm:text-lg tracking-tighter">2ГИС</span>
           </div>
         </motion.div>
 
