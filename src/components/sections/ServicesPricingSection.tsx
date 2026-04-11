@@ -66,9 +66,9 @@ export const ServicesPricingSection = () => {
                       alt={category.category}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                     <motion.h3
-                      className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-wide"
+                      className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 text-xl sm:text-3xl lg:text-5xl font-bold text-white tracking-wide leading-tight max-w-[calc(100%-3rem)]"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2 }}
