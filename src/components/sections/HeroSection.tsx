@@ -56,7 +56,7 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          {heroContent.h1}
+          Ваше <span className="text-primary">идеальное преображение</span> в самом сердце Нижнего Новгорода
         </motion.h1>
 
         <motion.p
