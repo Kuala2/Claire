@@ -1,30 +1,147 @@
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/Button";
 import { companyInfo, heroContent } from "../../data/content";
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
+  const navLinks = [
+    { name: "Услуги", href: "#services" },
+    { name: "Почему мы", href: "#benefits" },
+    { name: "Частые вопросы", href: "#faq" },
+  ];
+
   return (
-    <header className="absolute top-0 z-50 w-full border-b border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex py-2 items-center justify-between">
-          <div className="flex-shrink-0 flex items-center gap-3">
-            <img src="/assets/Logo.png" alt={companyInfo.name} className="h-24 sm:h-28 w-auto object-contain transition-transform hover:scale-105" />
-            <span className="text-3xl font-serif font-medium tracking-wide text-white">
-              {companyInfo.name}
-            </span>
-          </div>
-          <nav className="hidden md:flex space-x-8">
-            <a href="#services" className="text-base font-display font-semibold text-gray-100 hover:text-primary transition-colors">Услуги</a>
-            <a href="#benefits" className="text-base font-display font-semibold text-gray-100 hover:text-primary transition-colors">Почему мы</a>
-            <a href="#faq" className="text-base font-display font-semibold text-gray-100 hover:text-primary transition-colors">Частые вопросы</a>
-          </nav>
-          <div className="flex items-center gap-4">
-            <a href={`tel:${companyInfo.phone}`} className="hidden md:block text-lg font-display font-bold text-white hover:text-primary transition-colors">
-              {companyInfo.phone}
-            </a>
-            <Button href="#booking" size="md" className="hidden sm:inline-flex font-display">{heroContent.ctaText}</Button>
+    <>
+      <header className="absolute top-0 z-50 w-full border-b border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex py-2 items-center justify-between">
+            <div className="flex-shrink-0 flex items-center gap-2">
+              <img src="/assets/Logo.png" alt={companyInfo.name} className="h-14 sm:h-24 w-auto object-contain transition-transform hover:scale-105" />
+              <span className="text-xl sm:text-3xl font-serif font-medium tracking-wide text-white">
+                {companyInfo.name}
+              </span>
+            </div>
+
+            <nav className="hidden md:flex space-x-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-base font-display font-semibold text-gray-100 hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
+
+            <div className="flex items-center gap-4">
+              <a href={`tel:${companyInfo.phone}`} className="hidden md:block text-lg font-display font-bold text-white hover:text-primary transition-colors">
+                {companyInfo.phone}
+              </a>
+
+              <div className="hidden sm:block">
+                <Button href="#booking" size="md" className="font-display">
+                  {heroContent.ctaText}
+                </Button>
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-2 text-white md:hidden hover:bg-white/10 rounded-lg transition-colors"
+                aria-label="Toggle Menu"
+              >
+                {isOpen ? <X size={32} /> : <Menu size={32} />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Mobile Menu Overlay - Premium Glassmorphism */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[9999] md:hidden bg-gray-950/80 backdrop-blur-2xl flex flex-col items-center justify-center p-6 overflow-hidden"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-6 right-6 text-white/70 hover:text-white p-2 transition-colors z-[10000]"
+              aria-label="Close Menu"
+            >
+              <X size={32} />
+            </button>
+
+            <nav className="flex flex-col items-center w-full max-w-xs">
+              {/* Logo section - more compact */}
+              <div className="mb-10 text-center">
+                <img src="/assets/Logo.png" alt={companyInfo.name} className="h-16 w-auto mx-auto mb-2" />
+                <h2 className="text-lg font-serif font-medium text-white/50 tracking-[0.2em] uppercase">
+                  {companyInfo.name}
+                </h2>
+              </div>
+
+              {/* Nav Links - tight spacing to fit screen */}
+              <div className="flex flex-col items-center space-y-6 mb-10">
+                {navLinks.map((link, idx) => (
+                  <motion.a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + idx * 0.1 }}
+                    className="text-3xl font-display font-bold text-white hover:text-primary transition-all active:scale-95"
+                  >
+                    {link.name}
+                  </motion.a>
+                ))}
+              </div>
+
+              {/* Bottom section */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="flex flex-col items-center gap-6 pt-8 border-t border-white/10 w-full"
+              >
+                <a
+                  href={`tel:${companyInfo.phone}`}
+                  className="text-xl font-bold text-white hover:text-primary transition-colors"
+                >
+                  {companyInfo.phone}
+                </a>
+
+                <Button
+                  href="#booking"
+                  size="lg"
+                  className="w-full text-lg py-4 rounded-xl shadow-xl"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {heroContent.ctaText}
+                </Button>
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };

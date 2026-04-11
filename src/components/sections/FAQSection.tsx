@@ -23,8 +23,8 @@ export const FAQSection = () => {
           {faqContent.questions.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className={cn(
                   "border border-gray-100 rounded-2xl bg-white overflow-hidden transition-colors",
                   isOpen ? "border-primary/20" : ""
@@ -35,12 +35,12 @@ export const FAQSection = () => {
                   className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                 >
                   <span className="text-lg font-semibold text-gray-900">{faq.q}</span>
-                  <ChevronDown 
+                  <ChevronDown
                     className={cn(
-                      "text-gray-400 transition-transform duration-200", 
+                      "text-gray-400 transition-transform duration-200",
                       isOpen ? "transform rotate-180 text-primary" : ""
-                    )} 
-                    size={24} 
+                    )}
+                    size={24}
                   />
                 </button>
                 <AnimatePresence>

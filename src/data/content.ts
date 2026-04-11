@@ -36,7 +36,7 @@ export const servicesContent = {
   items: [
     {
       category: "ПАРИКМАХЕРСКИЕ УСЛУГИ",
-      image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=600",
+      image: "/assets/1.png",
       services: [
         { name: "Стрижка мужская (насадка/модельная/удлиненная)", price: "500/ 900/ 1100 ₽" },
         { name: "Стрижка женская (короткие/средние/длинные)", price: "1000/ 1200/ 1500 ₽" },
@@ -66,7 +66,7 @@ export const servicesContent = {
     {
       category: "МАНИКЮР",
       fullTitle: "МАНИКЮР (аппаратный/комбинированный)",
-      image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&q=80&w=600",
+      image: "/assets/2.png",
       services: [
         { name: "Маникюр без покрытия", price: "1200 ₽" },
         { name: "Маникюр (снятие + покрытие гель-лак)", price: "2000 ₽" },
@@ -87,7 +87,7 @@ export const servicesContent = {
     {
       category: "ПЕДИКЮР",
       fullTitle: "ПЕДИКЮР (аппаратный/комбинированный)",
-      image: "https://images.unsplash.com/photo-1519415510236-85592ada715b?auto=format&fit=crop&q=80&w=600",
+      image: "/assets/3.png",
       services: [
         { name: "Педикюр только пальчики (без покрытия)", price: "1700 ₽" },
         { name: "Педикюр (только пальчики) + гель-лак", price: "2500 ₽" },
@@ -107,7 +107,7 @@ export const servicesContent = {
     {
       category: "БРОВИ",
       fullTitle: "ОФОРМЛЕНИЕ БРОВЕЙ",
-      image: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&q=80&w=600",
+      image: "/assets/4.png",
       services: [
         { name: "Коррекция бровей (пинцет)", price: "400 ₽" },
         { name: "Коррекция бровей (сахар)", price: "500 ₽" },
@@ -120,7 +120,7 @@ export const servicesContent = {
     {
       category: "МАКИЯЖ",
       fullTitle: "ПЕРМАНЕНТНЫЙ МАКИЯЖ (аппаратная техника)",
-      image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=600",
+      image: "/assets/5.png",
       services: [
         { name: "Брови", price: "6000 ₽" },
         { name: "Губы", price: "6000 ₽" },
@@ -135,7 +135,7 @@ export const servicesContent = {
     {
       category: "ДЕПИЛЯЦИЯ",
       fullTitle: "ДЕПИЛЯЦИЯ (сахар)",
-      image: "https://images.unsplash.com/photo-1590439471364-192aa70c8b53?auto=format&fit=crop&q=80&w=600",
+      image: "/assets/6.png",
       services: [
         { name: "Лицо", price: "700 ₽" },
         { name: "Верхняя губа + подбородок", price: "500 ₽" },
@@ -158,7 +158,7 @@ export const servicesContent = {
     {
       category: "ПИРСИНГ",
       fullTitle: "ПИРСИНГ (стоимость указана с учетом медицинских сережек)",
-      image: "https://images.unsplash.com/photo-1590439472305-6490656a8b79?auto=format&fit=crop&q=80&w=600",
+      image: "/assets/7.png",
       services: [
         { name: "Прокол мочки уха пистолетом (1 прокол)", price: "1000 ₽" },
         { name: "Прокол мочек ушей пистолетом (2 прокола)", price: "2000 ₽" },
@@ -174,7 +174,7 @@ export const servicesContent = {
     },
     {
       category: "РЕСНИЦЫ",
-      image: "https://images.unsplash.com/photo-1621210185326-ca291199344f?auto=format&fit=crop&q=80&w=600",
+      image: "/assets/8.png",
       services: [
         { name: "Щадящее снятие ресниц (не наша работа)", price: "500 ₽" },
         { name: "Ламинирование ресниц", price: "1500 ₽" },
@@ -185,7 +185,7 @@ export const servicesContent = {
     },
     {
       category: "КОСМЕТОЛОГИЯ",
-      image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=600",
+      image: "/assets/9.png",
       services: [
         { name: "Комплексная чистка лица", price: "2500 ₽" },
         { name: "Механическая чистка лица", price: "2000 ₽" },
@@ -204,7 +204,7 @@ export const servicesContent = {
     {
       category: "МАССАЖ",
       fullTitle: "МАССАЖ (ручной)",
-      image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=600",
+      image: "/assets/10.png",
       services: [
         { name: "Массаж спины", price: "2000 ₽ / 30 мин" },
         { name: "Массаж головы", price: "1500 ₽ / 30 мин" },

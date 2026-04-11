@@ -12,13 +12,15 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 25vh; /* Places anchors roughly below the upper third / near center */
+  scroll-padding-top: 25vh;
+  /* Places anchors roughly below the upper third / near center */
 }
 
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
