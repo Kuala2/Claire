@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { Button } from "../ui/Button";
 import { heroContent } from "../../data/content";
+import { useBooking } from "../../context/BookingContext";
 
 export const HeroSection = () => {
+  const { openBookingModal } = useBooking();
+
   return (
     <section
       className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden"
@@ -57,7 +60,7 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Ваш идеальный образ: от стрижки (от 500 ₽) до косметологии. Мастера с опытом от 6 лет.
+          {heroContent.subtitle}
         </motion.p>
 
         <motion.div
@@ -66,7 +69,7 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Button href="#booking" size="lg" className="w-full sm:w-auto shadow-xl hover:scale-105 transition-transform duration-300">
+          <Button onClick={openBookingModal} size="lg" className="w-full sm:w-auto shadow-xl hover:scale-105 transition-transform duration-300">
             {heroContent.ctaText}
           </Button>
         </motion.div>

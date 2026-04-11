@@ -9,22 +9,26 @@ import { CTASection } from "./components/sections/CTASection";
 import { MapSection } from "./components/sections/MapSection";
 import { FooterSection } from "./components/sections/FooterSection";
 
+import { BookingProvider } from "./context/BookingContext";
+
 function App() {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <HeroSection />
-        <WhyChooseUsSection />
-        <ServicesPricingSection />
-        <TeamSection />
-        <PortfolioSection />
-        <FAQSection />
-        <CTASection />
-        <MapSection />
-      </main>
-      <FooterSection />
-    </div>
+    <BookingProvider>
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main>
+          <HeroSection />
+          <WhyChooseUsSection />
+          <ServicesPricingSection />
+          <TeamSection />
+          <PortfolioSection />
+          <FAQSection />
+          <CTASection />
+          <MapSection />
+        </main>
+        <FooterSection />
+      </div>
+    </BookingProvider>
   );
 }
 

@@ -3,9 +3,11 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/Button";
 import { companyInfo, heroContent } from "../../data/content";
+import { useBooking } from "../../context/BookingContext";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { openBookingModal } = useBooking();
 
   // Prevent scroll when menu is open
   useEffect(() => {
@@ -15,6 +17,11 @@ export const Header = () => {
       document.body.style.overflow = 'unset';
     }
   }, [isOpen]);
+
+  const handleBookingClick = () => {
+    setIsOpen(false);
+    openBookingModal();
+  };
 
   const navLinks = [
     { name: "Услуги", href: "#services" },
@@ -52,7 +59,7 @@ export const Header = () => {
               </a>
 
               <div className="hidden sm:block">
-                <Button href="#booking" size="md" className="font-display">
+                <Button onClick={openBookingModal} size="md" className="font-display">
                   {heroContent.ctaText}
                 </Button>
               </div>
@@ -130,10 +137,9 @@ export const Header = () => {
                 </a>
 
                 <Button
-                  href="#booking"
+                  onClick={handleBookingClick}
                   size="lg"
                   className="w-full text-lg py-4 rounded-xl shadow-xl"
-                  onClick={() => setIsOpen(false)}
                 >
                   {heroContent.ctaText}
                 </Button>

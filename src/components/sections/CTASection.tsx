@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
 import { companyInfo } from "../../data/content";
+import { useBooking } from "../../context/BookingContext";
 
 export const CTASection = () => {
+  const { openBookingModal } = useBooking();
+
   return (
     <section id="booking" className="py-20 bg-white relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -23,7 +26,7 @@ export const CTASection = () => {
             Запишитесь прямо сейчас и доверьте свой образ профессионалам нашего салона.
           </p>
           <div className="flex flex-col gap-8 justify-center items-center">
-            <Button size="lg" className="w-full sm:w-auto h-16 px-12 text-lg rounded-full shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+            <Button onClick={openBookingModal} size="lg" className="w-full sm:w-auto h-16 px-12 text-lg rounded-full shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
               Записаться онлайн
             </Button>
 
