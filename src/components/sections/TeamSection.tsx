@@ -25,30 +25,56 @@ export const TeamSection = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamContent.members.map((member, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="group"
-            >
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-shadow duration-300">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <p className="text-white text-sm font-medium">{member.experience}</p>
+        <div className="relative">
+          <div 
+            className="flex lg:grid lg:grid-cols-3 gap-6 lg:gap-12 overflow-x-auto lg:overflow-visible pb-8 lg:pb-0 -mx-4 px-4 lg:mx-0 lg:px-0 snap-x snap-mandatory no-scrollbar"
+          >
+            {teamContent.members.map((member, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (idx % 3) * 0.1 }}
+                className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-full snap-center group flex flex-col h-full"
+              >
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-5 shadow-sm group-hover:shadow-xl transition-all duration-300">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                  />
+                  
+                  {/* Status Badge */}
+                  {member.name === "Лябина Елена" && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-primary/90 text-white py-3 text-center backdrop-blur-sm z-10 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2">
+                       <span className="text-sm font-bold uppercase tracking-widest">Руководитель студии</span>
+                    </div>
+                  )}
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-white text-sm font-medium tracking-wide translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      {member.experience}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-              <p className="text-primary font-medium">{member.role}</p>
-            </motion.div>
-          ))}
+                
+                <div className="flex flex-col flex-grow min-h-[120px]">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                  <p className="text-primary font-medium whitespace-pre-line leading-snug text-sm lg:text-[15px]">
+                    {member.role}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Mobile Scroll Indicator */}
+          <div className="flex justify-center gap-1.5 mt-4 lg:hidden">
+            {teamContent.members.map((_, i) => (
+              <div key={i} className={`h-1 rounded-full transition-all ${i === 0 ? "w-4 bg-primary" : "w-1 bg-gray-300"}`} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

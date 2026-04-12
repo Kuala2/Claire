@@ -224,32 +224,62 @@ export const servicesContent = {
 };
 
 export const teamContent = {
-  title: "Наша команда",
+  title: "Наши специалисты",
   subtitle: "Профессионалы, влюбленные в свое дело",
   members: [
     {
-      name: "Анна Смирнова",
-      role: "Топ-стилист / Парикмахер",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600",
-      experience: "Опыт 12 лет"
+      name: "Лябина Елена",
+      role: "Специалист по пирсингу и\nперманентному макияжу",
+      image: "/assets/1M.jpg",
+      experience: "Основатель студии"
     },
     {
-      name: "Дмитрий Иванов",
-      role: "Барбер / Стилист",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=600",
-      experience: "Опыт 8 лет"
+      name: "Светлана",
+      role: "Стилист-колорист премиум-класса",
+      image: "/assets/2M.png",
+      experience: "Мастер-эксперт"
     },
     {
-      name: "Мария Петрова",
-      role: "Косметолог-эстетист",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=600",
-      experience: "Опыт 10 лет"
+      name: "Марианна",
+      role: "Косметолог",
+      image: "/assets/3M.png",
+      experience: "Специалист по уходу"
     },
     {
-      name: "Екатерина Соколова",
-      role: "Мастер маникюра",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=600",
-      experience: "Опыт 6 лет"
+      name: "Татьяна",
+      role: "Премиум-мастер ногтевого сервиса",
+      image: "/assets/4M.png",
+      experience: "Мастер высшей категории"
+    },
+    {
+      name: "Анна",
+      role: "Парикмахер-универсал • Бровист",
+      image: "/assets/5M.png",
+      experience: "Универсальный специалист"
+    },
+    {
+      name: "Юлия",
+      role: "Парикмахер-универсал • Бровист",
+      image: "/assets/6M.png",
+      experience: "Универсальный специалист"
+    },
+    {
+      name: "Ольга",
+      role: "Парикмахер-универсал",
+      image: "/assets/7M.png",
+      experience: "Мастер с опытом"
+    },
+    {
+      name: "Татьяна",
+      role: "Топ-мастер\nногтевого сервиса",
+      image: "/assets/8M.png",
+      experience: "Топ-специалист"
+    },
+    {
+      name: "Сергей",
+      role: "Специалист по массажу",
+      image: "/assets/9M.png",
+      experience: "Мастер массажа"
     }
   ]
 };
