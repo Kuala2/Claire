@@ -1,7 +1,24 @@
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { teamContent } from "../../data/content";
 
 export const TeamSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      const totalItems = teamContent.members.length;
+      // Precision calculation for active index
+      const maxScroll = scrollWidth - clientWidth;
+      if (maxScroll <= 0) return;
+      
+      const index = Math.round((scrollLeft / maxScroll) * (totalItems - 1));
+      if (index !== activeIndex) setActiveIndex(index);
+    }
+  };
+
   return (
     <section className="py-24 bg-slate-50 overflow-hidden relative" id="team">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -18,7 +35,7 @@ export const TeamSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.15, duration: 0.8 }}
             className="text-lg text-gray-600 max-w-2xl mx-auto"
           >
             {teamContent.subtitle}
@@ -27,15 +44,17 @@ export const TeamSection = () => {
 
         <div className="relative">
           <div 
+            ref={scrollRef}
+            onScroll={handleScroll}
             className="flex lg:grid lg:grid-cols-3 gap-6 lg:gap-12 overflow-x-auto lg:overflow-visible pb-8 lg:pb-0 -mx-4 px-4 lg:mx-0 lg:px-0 snap-x snap-mandatory no-scrollbar"
           >
             {teamContent.members.map((member, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: (idx % 3) * 0.1 }}
+                transition={{ delay: (idx % 3) * 0.15, duration: 0.7 }}
                 className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-full snap-center group flex flex-col h-full"
               >
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-5 shadow-sm group-hover:shadow-xl transition-all duration-300">
@@ -70,9 +89,14 @@ export const TeamSection = () => {
           </div>
           
           {/* Mobile Scroll Indicator */}
-          <div className="flex justify-center gap-1.5 mt-4 lg:hidden">
+          <div className="flex justify-center gap-2 mt-4 lg:hidden">
             {teamContent.members.map((_, i) => (
-              <div key={i} className={`h-1 rounded-full transition-all ${i === 0 ? "w-4 bg-primary" : "w-1 bg-gray-300"}`} />
+              <div 
+                key={i} 
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === activeIndex ? "w-6 bg-primary" : "w-1.5 bg-gray-300"
+                }`} 
+              />
             ))}
           </div>
         </div>
