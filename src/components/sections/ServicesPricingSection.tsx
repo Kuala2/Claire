@@ -2,9 +2,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "../ui/Button";
 import { servicesContent } from "../../data/content";
+import { useServices } from "../../hooks/useServices";
 import { cn } from "../../lib/utils";
 
 export const ServicesPricingSection = () => {
+  const { data: categories, loading } = useServices();
   const [activeCategoryIdx, setActiveCategoryIdx] = useState(0);
   const [expandedCategories, setExpandedCategories] = useState<number[]>([]);
 
@@ -13,6 +15,21 @@ export const ServicesPricingSection = () => {
       prev.includes(idx) ? prev.filter(i => i !== idx) : [...prev, idx]
     );
   };
+
+  if (loading) {
+    return (
+      <section id="services" className="py-24 bg-background overflow-hidden min-h-[600px] flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-gray-500 font-medium italic">Загружаем услуги...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (categories.length === 0) {
+    return null;
+  }
 
   return (
     <section id="services" className="py-24 bg-background overflow-hidden">
@@ -23,9 +40,8 @@ export const ServicesPricingSection = () => {
           </h2>
 
           {/* Category Tabs */}
-          {/* Category Tabs - Horizontal scroll on mobile */}
           <div className="flex sm:flex-wrap sm:justify-center overflow-x-auto no-scrollbar gap-3 sm:gap-4 mb-12 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory">
-            {servicesContent.items.map((category, idx) => (
+            {categories.map((category, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveCategoryIdx(idx)}
@@ -44,7 +60,7 @@ export const ServicesPricingSection = () => {
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
           <AnimatePresence mode="wait">
-            {servicesContent.items.map((category, idx) => {
+            {categories.map((category, idx) => {
               if (idx !== activeCategoryIdx) return null;
 
               const isExpanded = expandedCategories.includes(idx);
@@ -73,7 +89,7 @@ export const ServicesPricingSection = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2 }}
                     >
-                      {('fullTitle' in category && category.fullTitle) ? category.fullTitle : category.category}
+                      {category.category}
                     </motion.h3>
                   </div>
 
@@ -119,3 +135,4 @@ export const ServicesPricingSection = () => {
     </section>
   );
 };
+
