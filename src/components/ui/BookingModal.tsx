@@ -38,7 +38,7 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
             </button>
 
             <h3 className="text-2xl font-bold text-gray-900 mb-2">Записаться онлайн</h3>
-            <p className="text-gray-600 mb-8">Выберите удобный способ для связи с мастером</p>
+            <p className="text-gray-600 mb-8">Выберите удобный способ для связи с салоном</p>
 
             <div className="flex justify-center gap-8 mb-8">
               <a

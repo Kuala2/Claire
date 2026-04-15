@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Papa from 'papaparse';
 
 export interface RawSheetRow {
   "Категория": string;
@@ -31,7 +32,7 @@ const categoryImages: Record<string, string> = {
   "МАССАЖ": "/assets/10.png",
 };
 
-const API_URL = 'https://sheetdb.io/api/v1/u6l3g07a3j7v7';
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTBz8_iVYb0GNVTieZ-L-yZfL7lEwILS_pa57mmfu8FxDwOiYBjGMeGg8E4QMx_Qxj0KS-STnWeXKTz/pub?gid=0&single=true&output=csv';
 
 export const useServices = () => {
   const [data, setData] = useState<ServiceCategory[]>([]);
@@ -41,15 +42,27 @@ export const useServices = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(CSV_URL);
         if (!response.ok) throw new Error('Failed to fetch services');
-        const rawData: RawSheetRow[] = await response.json();
+        
+        const csvText = await response.text();
+        
+        Papa.parse<RawSheetRow>(csvText, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (results) => {
+            const transformedData = transformSheetData(results.data);
+            setData(transformedData);
+            setLoading(false);
+          },
+          error: (err: Error) => {
+             setError(err.message);
+             setLoading(false);
+          }
+        });
 
-        const transformedData = transformSheetData(rawData);
-        setData(transformedData);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Unknown error');
-      } finally {
         setLoading(false);
       }
     };
@@ -75,7 +88,7 @@ const transformSheetData = (rows: RawSheetRow[]): ServiceCategory[] => {
       return;
     }
 
-    if (!currentCategory) return; // Should not happen if correctly formatted
+    if (!currentCategory) return; 
 
     if (!categoriesMap.has(currentCategory)) {
       categoriesMap.set(currentCategory, []);

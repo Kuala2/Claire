@@ -32,7 +32,7 @@ export const CTASection = () => {
 
             <div className="flex items-center gap-6">
               <a 
-                href="https://vk.com/im/convo/504464826" 
+                href="https://vk.com/id504464826" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[#0077FF] text-white hover:scale-110 transition-all duration-300 shadow-lg" 
