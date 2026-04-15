@@ -38,8 +38,8 @@ export const CTASection = () => {
                 className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[#0077FF] text-white hover:scale-110 transition-all duration-300 shadow-lg" 
                 title="Написать ВКонтакте"
               >
-                <svg className="w-10 h-10 fill-currentColor" viewBox="0 0 24 24">
-                  <path d="M11.666 18.994c-6.09 0-9.564-4.172-9.71-11.117h3.047c.105 5.106 2.355 7.27 4.134 7.716V7.877h2.864v4.406c1.751-.186 3.608-2.186 4.232-4.406h2.864c-.463 2.768-2.511 4.768-4.004 5.811 1.493.687 3.847 2.418 4.774 5.306h-3.13c-.727-2.264-2.536-3.994-4.735-4.217v4.217h-1.136z" />
+                <svg className="w-11 h-11 fill-white" viewBox="0 0 24 24">
+                  <path d="M13.162 18.994c-6.09 0-9.564-4.172-9.71-11.117h3.047c.105 5.106 2.355 7.27 4.134 7.716V7.877h2.864v4.406c1.751-.186 3.608-2.186 4.232-4.406h2.864c-.463 2.768-2.511 4.768-4.004 5.811 1.493.687 3.847 2.418 4.774 5.306h-3.13c-.727-2.264-2.536-3.994-4.735-4.217v4.217h-1.136z" />
                 </svg>
               </a>
               <a href="#" className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white overflow-hidden hover:scale-110 transition-all duration-300 shadow-sm border border-gray-100" title="Национальный мессенджер Макс">
