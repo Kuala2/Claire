@@ -26,7 +26,7 @@ export const CTASection = () => {
             Запишитесь прямо сейчас и доверьте свой образ профессионалам нашего салона.
           </p>
           <div className="flex flex-col gap-8 justify-center items-center">
-            <Button onClick={openBookingModal} size="lg" className="w-full sm:w-auto h-16 px-12 text-lg rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/40 hover:scale-105 active:scale-95 transition-all">
+            <Button onClick={openBookingModal} size="lg" className="w-full sm:w-auto h-16 px-12 text-lg rounded-full shadow-lg shadow-primary/30 hover:shadow-primary/40 hover:scale-105 active:scale-95 transition-all">
               Записаться онлайн
             </Button>
 

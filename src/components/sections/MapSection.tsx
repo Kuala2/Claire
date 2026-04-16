@@ -39,7 +39,7 @@ export const MapSection = () => {
                       className="block bg-gray-50 text-gray-900 border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all text-center group"
                     >
                       <span className="block text-lg font-bold mb-2">{companyInfo.address}</span>
-                      <span className="text-pink-500 group-hover:text-pink-600 font-medium transition-colors">Построить маршрут</span>
+                      <span className="text-primary group-hover:text-primary/80 font-medium transition-colors">Построить маршрут</span>
                     </a>
                   </div>
 
