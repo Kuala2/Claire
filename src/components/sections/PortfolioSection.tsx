@@ -1,21 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const interiorImages = [
-  "https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800",
+const allPortfolioImages = [
+  "/assets/Portfolio/p1.jpg", "/assets/Portfolio/p2.jpg", "/assets/Portfolio/p3.jpg", "/assets/Portfolio/p4.jpg", "/assets/Portfolio/p5.jpg", "/assets/Portfolio/p6.jpg", "/assets/Portfolio/p7.jpg",
+  "/assets/Portfolio/n1.jpg", "/assets/Portfolio/n2.jpg", "/assets/Portfolio/n3.jpg", "/assets/Portfolio/n4.jpg", "/assets/Portfolio/n5.jpg", "/assets/Portfolio/n6.jpg",
+  "/assets/Portfolio/m1.jpg", "/assets/Portfolio/m2.jpg", "/assets/Portfolio/m3.jpg", "/assets/Portfolio/m4.jpg",
+  "/assets/Portfolio/pm1.jpg", "/assets/Portfolio/pm2.jpg", "/assets/Portfolio/pm3.jpg", "/assets/Portfolio/pm4.jpg", "/assets/Portfolio/pm5.jpg",
+  "/assets/Portfolio/c1.jpg", "/assets/Portfolio/c2.jpg", "/assets/Portfolio/c3.jpg", "/assets/Portfolio/c4.jpg", "/assets/Portfolio/c5.jpg",
 ];
 
-const workImages = [
-  "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&q=80&w=800",
-  "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=800",
+const categories = [
+  { id: 'all', label: 'Все работы', prefix: '' },
+  { id: 'hair', label: 'Парикмахерские услуги', prefix: 'p' },
+  { id: 'nails', label: 'Ногтевой сервис', prefix: 'n' },
+  { id: 'cosm', label: 'Косметология', prefix: 'm' },
+  { id: 'perm', label: 'Перманентный макияж', prefix: 'pm' },
+  { id: 'pierce', label: 'Пирсинг', prefix: 'c' },
 ];
 
 /** Returns how many items are visible based on container width, matching Tailwind breakpoints */
@@ -25,10 +25,18 @@ const getVisibleCount = (containerWidth: number): number => {
   return 1; // mobile
 };
 
-const Carousel = ({ images, title, colorClass, type }: { images: string[], title: string, colorClass: string, type: 'sq' | 'rect' }) => {
+const Carousel = ({ images, type }: { images: string[], type: 'sq' | 'rect' }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
+
+  // Reset scroll on images change
+  useEffect(() => {
+    setActiveIndex(0);
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({ left: 0 });
+    }
+  }, [images]);
 
   // Dynamically detect how many cards are visible
   useEffect(() => {
@@ -88,10 +96,6 @@ const Carousel = ({ images, title, colorClass, type }: { images: string[], title
 
   return (
     <div className="mb-24">
-      <div className="flex items-center gap-4 mb-10 px-4 sm:px-0">
-        <span className={`w-2 h-10 ${colorClass} rounded-full`}></span>
-        <h3 className="text-3xl font-bold text-gray-900">{title}</h3>
-      </div>
 
       <div className="relative group px-4 sm:px-0">
         <button
@@ -119,11 +123,12 @@ const Carousel = ({ images, title, colorClass, type }: { images: string[], title
               key={idx}
               className={`snap-start px-3 py-2 ${type === 'sq' ? 'aspect-square' : 'aspect-[4/3]'}`}
             >
-              <div className="w-full h-full overflow-hidden rounded-[2.5rem] shadow-lg">
+              <div className="w-full h-full overflow-hidden rounded-[2.5rem] shadow-lg bg-gray-100">
                 <img
                   src={src}
-                  alt={title}
+                  alt="Portfolio"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -136,7 +141,7 @@ const Carousel = ({ images, title, colorClass, type }: { images: string[], title
               key={idx}
               onClick={() => scrollTo(idx)}
               className={`h-2 rounded-full transition-all duration-300 ${idx === activeIndex
-                  ? `w-8 ${colorClass}`
+                  ? 'w-8 bg-primary'
                   : 'w-2 bg-gray-200 hover:bg-gray-300'
                 }`}
             />
@@ -148,27 +153,57 @@ const Carousel = ({ images, title, colorClass, type }: { images: string[], title
 };
 
 export const PortfolioSection = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [filteredImages, setFilteredImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    let list = allPortfolioImages;
+    if (activeCategory !== 'all') {
+      const cat = categories.find(c => c.id === activeCategory);
+      if (cat) {
+        list = allPortfolioImages.filter(img => {
+          const filename = img.split('/').pop() || '';
+          // Special case for hair vs permanent makeup prefix collision
+          if (cat.id === 'hair') {
+            return filename.startsWith('p') && !filename.startsWith('pm');
+          }
+          return filename.startsWith(cat.prefix);
+        });
+      }
+    }
+    // Shuffle the result to maintain "random" feel within category
+    setFilteredImages([...list].sort(() => Math.random() - 0.5));
+  }, [activeCategory]);
+
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-white" id="portfolio">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Взгляд изнутри
+            Наши работы
           </h2>
-          <p className="mt-4 text-lg text-gray-600">Познакомьтесь с нами ближе</p>
+          <p className="mt-4 text-lg text-gray-600">Результаты наших мастеров</p>
+          
+          {/* Category Filter Buttons */}
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border-2 ${
+                  activeCategory === cat.id
+                    ? 'bg-primary border-primary text-white shadow-lg scale-105'
+                    : 'border-gray-100 text-gray-600 hover:border-primary/30 hover:bg-primary/5'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <Carousel
-          images={interiorImages}
-          title="Наш интерьер"
-          colorClass="bg-primary"
-          type="rect"
-        />
-
-        <Carousel
-          images={workImages}
-          title="Наши работы"
-          colorClass="bg-primary"
+          images={filteredImages}
           type="sq"
         />
       </div>
