@@ -57,7 +57,9 @@ export const FooterSection = () => {
         <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>© {new Date().getFullYear()} {companyInfo.name}. Все права защищены.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a>
+            <a href="/politics.html" target="_blank" className="text-gray-400 hover:text-primary transition-colors text-sm">
+              Политика конфиденциальности
+            </a>
           </div>
         </div>
       </div>

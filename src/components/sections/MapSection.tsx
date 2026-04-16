@@ -15,7 +15,7 @@ export const MapSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-gray-50 p-8 sm:p-10 rounded-[2.5rem] border border-gray-100 shadow-xl relative overflow-hidden flex flex-col justify-between w-full">
+            <div className="bg-white p-8 sm:p-10 rounded-[2.5rem] border border-gray-100 shadow-2xl shadow-slate-200/50 relative overflow-hidden flex flex-col justify-between w-full">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 shrink-0" />
               
               <div>
@@ -33,13 +33,13 @@ export const MapSection = () => {
                   <div>
                     <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-3">Наш адрес</p>
                     <a 
-                      href="https://yandex.com/maps/47/nizhny-novgorod/?ll=43.941473%2C56.295453&mode=poi&poi%5Bpoint%5D=43.941242%2C56.295449&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D137128585624&z=19.6" 
+                      href="https://yandex.com/maps/47/nizhny-novgorod/?ll=43.941473%2C56.295453&mode=poi&poi%5Bpoint%5D=43.941242%2C56.295449&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D137128585624&z=16" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="block bg-primary text-white p-5 rounded-2xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all text-center group"
+                      className="block bg-gray-50 text-gray-900 border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all text-center group"
                     >
-                      <span className="block text-lg font-bold mb-1">{companyInfo.address}</span>
-                      <span className="text-xs font-medium text-white/80 group-hover:text-white transition-colors">Построить маршрут в Картах</span>
+                      <span className="block text-lg font-bold mb-2">{companyInfo.address}</span>
+                      <span className="text-pink-500 group-hover:text-pink-600 font-medium transition-colors">Построить маршрут</span>
                     </a>
                   </div>
 
@@ -58,18 +58,12 @@ export const MapSection = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="mt-8 text-center">
-                <p className="text-primary font-bold text-xs uppercase tracking-widest inline-block px-4 py-2 bg-primary/5 rounded-full">
-                  Всего 5 минут пешком от м. Ленинская
-                </p>
-              </div>
             </div>
           </motion.div>
 
           {/* Map Container */}
           <motion.div 
-            className="w-full lg:w-2/3 min-h-[400px] h-auto lg:h-auto rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white bg-gray-100 relative group"
+            className="w-full lg:w-2/3 min-h-[400px] h-auto lg:h-auto rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200/50 border-8 border-white bg-gray-100 relative group"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

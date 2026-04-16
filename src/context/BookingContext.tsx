@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import { BookingModal } from '../components/ui/BookingModal';
 
 interface BookingContextType {
@@ -12,6 +12,11 @@ export const BookingProvider = ({ children }: { children: ReactNode }) => {
 
   const openBookingModal = () => setIsOpen(true);
   const closeBookingModal = () => setIsOpen(false);
+
+  useEffect(() => {
+    window.addEventListener('open-booking', openBookingModal);
+    return () => window.removeEventListener('open-booking', openBookingModal);
+  }, []);
 
   return (
     <BookingContext.Provider value={{ openBookingModal }}>

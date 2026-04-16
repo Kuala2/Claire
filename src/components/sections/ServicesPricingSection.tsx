@@ -49,7 +49,7 @@ export const ServicesPricingSection = () => {
                   "px-6 py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 border-2 whitespace-nowrap snap-center",
                   activeCategoryIdx === idx
                     ? "bg-primary border-primary text-white shadow-lg shadow-primary/20 scale-105"
-                    : "bg-white border-gray-100 text-gray-500 hover:border-primary/30 hover:text-primary"
+                    : "bg-white border-gray-100 text-slate-600 hover:bg-gray-50 hover:border-primary/30 hover:text-primary transition-all duration-300"
                 )}
               >
                 {category.category}
@@ -74,7 +74,7 @@ export const ServicesPricingSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="bg-white rounded-[2rem] overflow-hidden shadow-2xl shadow-gray-200/50 border border-gray-100 flex flex-col"
+                  className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 flex flex-col"
                 >
                   <div className="h-64 sm:h-80 md:h-[450px] w-full overflow-hidden relative">
                     <img
@@ -82,15 +82,6 @@ export const ServicesPricingSection = () => {
                       alt={category.category}
                       className="w-full h-full object-cover"
                     />
-                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                    <motion.h3
-                      className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 text-xl sm:text-3xl lg:text-5xl font-bold text-white tracking-wide leading-tight max-w-[calc(100%-3rem)]"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      {category.category}
-                    </motion.h3>
                   </div>
 
                   <div className="p-4 sm:p-10 lg:p-12 bg-white">
@@ -107,7 +98,7 @@ export const ServicesPricingSection = () => {
                           <span className="text-gray-900 font-bold text-sm sm:text-xl whitespace-nowrap min-w-[80px] sm:min-w-[160px] text-right">
                             {service.price}
                           </span>
-                          <Button href="#booking" size="sm" variant="outline" className="hidden sm:inline-flex rounded-full px-6 h-10 text-sm font-bold">
+                          <Button href="#booking" size="sm" variant="outline" className="rounded-full px-4 py-1.5 h-auto text-[13px] sm:text-sm font-bold border-primary/20 text-primary hover:bg-primary hover:text-white transition-all">
                             Запись
                           </Button>
                         </motion.div>

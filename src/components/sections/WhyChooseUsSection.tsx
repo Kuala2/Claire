@@ -24,17 +24,17 @@ export const WhyChooseUsSection = () => {
           {benefitsContent.items.map((item, idx) => (
             <motion.div
               key={idx}
-              className="bg-background rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 relative overflow-hidden"
+              className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 relative overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/5 text-primary border border-primary/10">
+              <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/5 text-primary border border-primary/10">
                 {getIcon(idx)}
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-              <p className="text-gray-600 leading-relaxed font-medium">{item.description}</p>
+              <p className="text-slate-600 leading-relaxed font-medium">{item.description}</p>
             </motion.div>
           ))}
         </div>

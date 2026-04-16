@@ -53,16 +53,10 @@ export const Header = () => {
               ))}
             </nav>
 
-            <div className="flex items-center gap-4">
-              <a href={`tel:${companyInfo.phone}`} className="hidden md:block text-lg font-display font-bold text-white hover:text-primary transition-colors">
+            <div className="flex items-center">
+              <a href={`tel:${companyInfo.phone}`} className="hidden md:block text-2xl font-display font-bold text-white hover:text-primary transition-colors">
                 {companyInfo.phone}
               </a>
-
-              <div className="hidden sm:block">
-                <Button onClick={openBookingModal} size="md" className="font-display">
-                  {heroContent.ctaText}
-                </Button>
-              </div>
 
               {/* Mobile Menu Button */}
               <button
@@ -131,18 +125,10 @@ export const Header = () => {
               >
                 <a
                   href={`tel:${companyInfo.phone}`}
-                  className="text-xl font-bold text-white hover:text-primary transition-colors"
+                  className="text-2xl font-bold text-white hover:text-primary transition-colors"
                 >
                   {companyInfo.phone}
                 </a>
-
-                <Button
-                  onClick={handleBookingClick}
-                  size="lg"
-                  className="w-full text-lg py-4 rounded-xl shadow-xl"
-                >
-                  {heroContent.ctaText}
-                </Button>
               </motion.div>
             </nav>
           </motion.div>

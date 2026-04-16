@@ -22,11 +22,11 @@ export const CTASection = () => {
           <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6 tracking-tight leading-tight px-2">
             Готовы к преображению?
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto px-4">
+          <p className="text-base sm:text-xl text-slate-700 mb-10 max-w-2xl mx-auto px-4">
             Запишитесь прямо сейчас и доверьте свой образ профессионалам нашего салона.
           </p>
           <div className="flex flex-col gap-8 justify-center items-center">
-            <Button onClick={openBookingModal} size="lg" className="w-full sm:w-auto h-16 px-12 text-lg rounded-full shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+            <Button onClick={openBookingModal} size="lg" className="w-full sm:w-auto h-16 px-12 text-lg rounded-full shadow-lg shadow-pink-500/30 hover:shadow-pink-500/40 hover:scale-105 active:scale-95 transition-all">
               Записаться онлайн
             </Button>
 
@@ -49,7 +49,7 @@ export const CTASection = () => {
 
             <a
               href={`tel:${companyInfo.phone}`}
-              className="text-lg sm:text-xl font-bold text-gray-900 hover:text-primary transition-colors text-center px-4 underline underline-offset-4 decoration-2 decoration-primary/30 hover:decoration-primary"
+              className="text-lg sm:text-xl font-bold text-gray-900 hover:text-primary transition-colors text-center px-4 underline decoration-1 underline-offset-4 decoration-gray-400 hover:decoration-primary/80"
             >
               Или позвоните нам:<br className="sm:hidden" /> {companyInfo.phone}
             </a>

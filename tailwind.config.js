@@ -7,8 +7,8 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#c102b0', // Logo pink
-          hover: '#9b018b',
+          DEFAULT: '#9d174d', // Premium Berry
+          hover: '#831843',
         },
         secondary: {
           DEFAULT: '#32CD32', // Lime Green

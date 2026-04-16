@@ -25,14 +25,14 @@ export const FAQSection = () => {
             return (
               <div
                 key={idx}
+                onClick={() => toggleFAQ(idx)}
                 className={cn(
-                  "border border-gray-100 rounded-2xl bg-white overflow-hidden transition-colors",
-                  isOpen ? "border-primary/20" : ""
+                  "border rounded-2xl bg-white overflow-hidden transition-colors cursor-pointer w-full",
+                  isOpen ? "border-primary" : "border-transparent hover:border-gray-100"
                 )}
               >
-                <button
-                  onClick={() => toggleFAQ(idx)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                <div
+                  className="w-full flex items-center justify-between p-6 text-left"
                 >
                   <span className="text-lg font-semibold text-gray-900">{faq.q}</span>
                   <ChevronDown
@@ -42,7 +42,7 @@ export const FAQSection = () => {
                     )}
                     size={24}
                   />
-                </button>
+                </div>
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div
@@ -51,9 +51,11 @@ export const FAQSection = () => {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                        {faq.a}
-                      </div>
+                      <div 
+                        className="px-6 pb-6 text-slate-700 leading-relaxed cursor-auto"
+                        onClick={(e) => e.stopPropagation()}
+                        dangerouslySetInnerHTML={{ __html: faq.a }}
+                      />
                     </motion.div>
                   )}
                 </AnimatePresence>
