@@ -89,18 +89,30 @@ export const ServicesPricingSection = () => {
                       {visibleServices.map((service, s_idx) => (
                         <motion.div
                           key={s_idx}
-                          className="flex items-center gap-4 sm:gap-8 py-4 sm:py-5 border-b border-gray-50 last:border-0 hover:bg-gray-50/50 transition-colors rounded-xl px-4 -mx-2 sm:-mx-4"
+                          className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-6 pb-4 mb-4 border-b border-gray-200 last:border-0 last:pb-0 last:mb-0 hover:bg-gray-50/20 transition-colors rounded-xl px-2 sm:px-4 -mx-1 sm:-mx-4"
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.1 + (s_idx * 0.05) }}
                         >
-                          <span className="text-gray-800 font-semibold text-sm sm:text-lg flex-1 leading-tight">{service.name}</span>
-                          <span className="text-gray-900 font-bold text-sm sm:text-xl whitespace-nowrap min-w-[80px] sm:min-w-[160px] text-right">
-                            {service.price}
-                          </span>
-                          <Button href="#booking" size="sm" variant="outline" className="rounded-full px-4 py-1.5 h-auto text-[13px] sm:text-sm font-bold border-primary/20 text-primary hover:bg-primary hover:text-white transition-all">
-                            Запись
-                          </Button>
+                          {/* Блок с названием услуги */}
+                          <div className="flex-1 text-[13px] sm:text-lg font-semibold text-gray-800 leading-tight min-w-0">
+                            {service.name}
+                          </div>
+
+                          {/* Блок с ценой и кнопкой */}
+                          <div className="flex items-center justify-between w-full sm:w-auto gap-4 sm:gap-8 shrink-0">
+                            <div className="text-gray-900 font-bold text-[13px] sm:text-xl whitespace-nowrap">
+                              {service.price}
+                            </div>
+                            <Button
+                              href="#booking"
+                              size="sm"
+                              variant="outline"
+                              className="rounded-full px-4 py-1.5 h-auto text-[11px] sm:text-sm font-bold border-primary/20 text-primary hover:bg-primary hover:text-white transition-all whitespace-nowrap shadow-sm"
+                            >
+                              Запись
+                            </Button>
+                          </div>
                         </motion.div>
                       ))}
                     </div>

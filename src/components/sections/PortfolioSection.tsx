@@ -185,15 +185,15 @@ export const PortfolioSection = () => {
           <p className="mt-4 text-lg text-gray-600">Результаты наших мастеров</p>
           
           {/* Category Filter Buttons */}
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-10 sm:mt-12 flex sm:flex-wrap sm:justify-center overflow-x-auto no-scrollbar gap-3 sm:gap-4 mb-12 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border-2 ${
+                className={`px-6 py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 border-2 whitespace-nowrap snap-center ${
                   activeCategory === cat.id
-                    ? 'bg-primary border-primary text-white shadow-lg scale-105'
-                    : 'border-gray-100 text-gray-600 hover:border-primary/30 hover:bg-primary/5'
+                    ? 'bg-primary border-primary text-white shadow-lg shadow-primary/20 scale-105'
+                    : 'bg-white border-gray-100 text-slate-600 hover:bg-gray-50 hover:border-primary/30 hover:text-primary transition-all duration-300'
                 }`}
               >
                 {cat.label}

@@ -9,7 +9,7 @@ interface BookingModalProps {
 
 export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
   const vkLink = "https://vk.com/im/convo/504464826";
-  const maxLink = "#"; // Replace with real link if available
+  const maxLink = "https://max.ru/u/f9LHodD0cOKshNQKE7nF-JksmpTaVOEdjamLbywwhNPVRrG8RVbj8O-jJvw";
 
   return (
     <AnimatePresence>
@@ -57,6 +57,8 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
 
               <a
                 href={maxLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-3"
               >
                 <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-white overflow-hidden shadow-lg border border-gray-100 group-hover:scale-110 transition-transform duration-300">
