@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
 import { companyInfo } from "../../data/content";
 import { useBooking } from "../../context/BookingContext";
@@ -29,24 +29,27 @@ export const CTASection = () => {
             <Button onClick={openBookingModal} size="lg" className="w-full sm:w-auto h-16 px-12 text-lg rounded-full shadow-lg shadow-primary/30 hover:shadow-primary/40 hover:scale-105 active:scale-95 transition-all">
               Записаться онлайн
             </Button>
+            <p className="text-sm sm:text-base font-semibold text-gray-800 -mt-4">
+              <span className="text-[#c1009a]">Скидка 10%</span> студентам и именинникам
+            </p>
 
             <div className="flex items-center gap-6">
-              <a 
-                href="https://vk.com/id504464826" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[#0077FF] text-white hover:scale-110 transition-all duration-300 shadow-lg" 
+              <a
+                href="https://vk.com/id504464826"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[#0077FF] text-white hover:scale-110 transition-all duration-300 shadow-lg"
                 title="Написать ВКонтакте"
               >
                 <svg className="w-11 h-11 fill-white" viewBox="0 0 24 24">
                   <path d="M13.162 18.994c-6.09 0-9.564-4.172-9.71-11.117h3.047c.105 5.106 2.355 7.27 4.134 7.716V7.877h2.864v4.406c1.751-.186 3.608-2.186 4.232-4.406h2.864c-.463 2.768-2.511 4.768-4.004 5.811 1.493.687 3.847 2.418 4.774 5.306h-3.13c-.727-2.264-2.536-3.994-4.735-4.217v4.217h-1.136z" />
                 </svg>
               </a>
-              <a 
-                href="https://max.ru/u/f9LHodD0cOKshNQKE7nF-JksmpTaVOEdjamLbywwhNPVRrG8RVbj8O-jJvw" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white overflow-hidden hover:scale-110 transition-all duration-300 shadow-sm border border-gray-100" 
+              <a
+                href="https://max.ru/u/f9LHodD0cOKshNQKE7nF-JksmpTaVOEdjamLbywwhNPVRrG8RVbj8O-jJvw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white overflow-hidden hover:scale-110 transition-all duration-300 shadow-sm border border-gray-100"
                 title="Национальный мессенджер Макс"
               >
                 <img src="/assets/Max.png" alt="Макс" className="w-full h-full object-cover" />

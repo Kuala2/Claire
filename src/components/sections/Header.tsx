@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { companyInfo } from "../../data/content";
+import { Button } from "../ui/Button";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,16 +10,19 @@ export const Header = () => {
   // Prevent scroll when menu is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
   }, [isOpen]);
 
   const navLinks = [
+    { name: "Преимущества", href: "#benefits" },
     { name: "Услуги", href: "#services" },
-    { name: "Почему мы", href: "#benefits" },
-    { name: "Частые вопросы", href: "#faq" },
+    { name: "Специалисты", href: "#team" },
+    { name: "Работы", href: "#portfolio" },
+    { name: "Вопросы", href: "#faq" },
+    { name: "Контакты", href: "#contacts" },
   ];
 
   return (
@@ -33,12 +37,12 @@ export const Header = () => {
               </span>
             </div>
 
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex gap-6 lg:gap-8">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-base font-display font-semibold text-gray-100 hover:text-primary transition-colors"
+                  className="text-sm lg:text-base font-display font-semibold text-gray-100 hover:text-primary transition-colors whitespace-nowrap"
                 >
                   {link.name}
                 </a>
@@ -84,15 +88,15 @@ export const Header = () => {
 
             <nav className="flex flex-col items-center w-full max-w-xs">
               {/* Logo section - more compact */}
-              <div className="mb-10 text-center">
+              <div className="mb-8 text-center">
                 <img src="/assets/Logo.png" alt={companyInfo.name} className="h-16 w-auto mx-auto mb-2" />
                 <h2 className="text-lg font-serif font-medium text-white/50 tracking-[0.2em] uppercase">
                   {companyInfo.name}
                 </h2>
               </div>
 
-              {/* Nav Links - tight spacing to fit screen */}
-              <div className="flex flex-col items-center space-y-6 mb-10">
+              {/* Nav Links */}
+              <div className="flex flex-col items-center space-y-3 mb-6">
                 {navLinks.map((link, idx) => (
                   <motion.a
                     key={link.name}
@@ -100,20 +104,31 @@ export const Header = () => {
                     onClick={() => setIsOpen(false)}
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + idx * 0.1 }}
-                    className="text-3xl font-display font-bold text-white hover:text-primary transition-all active:scale-95"
+                    transition={{ delay: 0.1 + idx * 0.07 }}
+                    className="text-2xl font-display font-bold text-white hover:text-primary transition-all active:scale-95"
                   >
                     {link.name}
                   </motion.a>
                 ))}
               </div>
 
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35 }}
+                className="w-full mb-5"
+              >
+                <Button href="#booking" onClick={() => setIsOpen(false)} size="lg" className="w-full">
+                  Записаться онлайн
+                </Button>
+              </motion.div>
+
               {/* Bottom section */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="flex flex-col items-center gap-6 pt-8 border-t border-white/10 w-full"
+                className="flex flex-col items-center gap-4 pt-6 border-t border-white/10 w-full"
               >
                 <a
                   href={`tel:${companyInfo.phone}`}
