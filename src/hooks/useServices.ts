@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 
 export interface RawSheetRow {
@@ -24,11 +24,11 @@ const categoryImages: Record<string, string> = {
   "МАНИКЮР": "/assets/2.png",
   "ПЕДИКЮР": "/assets/3.png",
   "БРОВИ": "/assets/4.png",
-  "МАКИЯЖ": "/assets/5.png",
+  "ПЕРМАНЕНТНЫЙ МАКИЯЖ": "/assets/5.png",
   "ДЕПИЛЯЦИЯ": "/assets/6.png",
   "ПИРСИНГ": "/assets/7.png",
   "РЕСНИЦЫ": "/assets/8.png",
-  "КОСМЕТОЛОГИЯ": "/assets/9.png",
+  "ЭСТЕТИЧЕСКАЯ КОСМЕТОЛОГИЯ": "/assets/9.png",
   "МАССАЖ": "/assets/10.png",
 };
 
@@ -44,9 +44,9 @@ export const useServices = () => {
       try {
         const response = await fetch(CSV_URL);
         if (!response.ok) throw new Error('Failed to fetch services');
-        
+
         const csvText = await response.text();
-        
+
         Papa.parse<RawSheetRow>(csvText, {
           header: true,
           skipEmptyLines: true,
@@ -56,8 +56,8 @@ export const useServices = () => {
             setLoading(false);
           },
           error: (err: Error) => {
-             setError(err.message);
-             setLoading(false);
+            setError(err.message);
+            setLoading(false);
           }
         });
 
@@ -88,7 +88,7 @@ const transformSheetData = (rows: RawSheetRow[]): ServiceCategory[] => {
       return;
     }
 
-    if (!currentCategory) return; 
+    if (!currentCategory) return;
 
     if (!categoriesMap.has(currentCategory)) {
       categoriesMap.set(currentCategory, []);
@@ -106,3 +106,4 @@ const transformSheetData = (rows: RawSheetRow[]): ServiceCategory[] => {
     image: categoryImages[category] || "/assets/1.png", // Fallback image
   }));
 };
+

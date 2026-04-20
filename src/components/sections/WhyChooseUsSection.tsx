@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Trophy, Users, Sparkles } from "lucide-react";
+import { Trophy, Sparkles } from "lucide-react";
 import { benefitsContent } from "../../data/content";
 
 const getIcon = (index: number) => {
   switch (index) {
     case 0: return <Trophy size={24} strokeWidth={1.5} />;
-    case 1: return <Users size={24} strokeWidth={1.5} />;
+    case 1: return <span className="text-lg font-bold leading-none">10+</span>;
     case 2: return <Sparkles size={24} strokeWidth={1.5} />;
     default: return <Sparkles size={24} strokeWidth={1.5} />;
   }
