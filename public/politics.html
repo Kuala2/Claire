@@ -1,217 +1,259 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Политика конфиденциальности | Клэр</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #c102b0;
-            --primary-hover: #9b018b;
-            --secondary: #32CD32;
-            --bg: #FAFAFA;
-            --text-main: #1a1a1a;
-            --text-muted: #666666;
-            --white: #ffffff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Политика в отношении обработки персональных данных | Клэр</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #c102b0;
+      --primary-hover: #9b018b;
+      --secondary: #32cd32;
+      --bg: #fafafa;
+      --text-main: #1a1a1a;
+      --text-muted: #666666;
+      --white: #ffffff;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 60px;
-            background: var(--white);
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-            position: relative;
-            overflow: hidden;
-        }
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 60px;
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
 
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
 
-        header {
-            margin-bottom: 50px;
-            text-align: center;
-        }
+    header {
+      margin-bottom: 36px;
+      text-align: center;
+    }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 30px;
-            transition: color 0.2s;
-        }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 30px;
+      transition: color 0.2s;
+    }
 
-        .back-link:hover {
-            color: var(--primary);
-        }
+    .back-link:hover {
+      color: var(--primary);
+    }
 
-        .back-link svg {
-            margin-right: 8px;
-        }
+    .back-link svg {
+      margin-right: 8px;
+    }
 
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
 
-        .last-updated {
-            font-size: 14px;
-            color: var(--text-muted);
-            font-style: italic;
-        }
+    .last-updated {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
 
-        section {
-            margin-bottom: 40px;
-        }
+    section {
+      margin-bottom: 30px;
+    }
 
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-        }
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
 
-        h2::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: var(--primary);
-            border-radius: 50%;
-            margin-right: 12px;
-        }
+    p {
+      margin-bottom: 14px;
+      color: #444;
+    }
 
-        p {
-            margin-bottom: 20px;
-            color: #444;
-        }
+    ul {
+      padding-left: 24px;
+      margin-bottom: 14px;
+    }
 
-        .contact-box {
-            background: #f8f0f8;
-            padding: 30px;
-            border-radius: 16px;
-            border-left: 4px solid var(--primary);
-            margin-top: 50px;
-        }
+    li {
+      margin-bottom: 8px;
+      color: #444;
+    }
 
-        .contact-box h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
 
-        .requisites {
-            font-size: 15px;
-            color: var(--text-muted);
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 30px;
+        border-radius: 16px;
+      }
 
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            padding-top: 40px;
-            border-top: 1px solid #eee;
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 20px;
-                padding: 30px;
-                border-radius: 16px;
-            }
-            h1 {
-                font-size: 24px;
-            }
-        }
-    </style>
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
+  <div class="container">
     <header>
-        <a href="/" class="back-link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Вернуться на главную
-        </a>
-        <h1>Политика конфиденциальности</h1>
-        <p class="last-updated">Последнее обновление: 16 апреля 2026 г.</p>
+      <a href="/" class="back-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Вернуться на главную
+      </a>
+      <h1>Политика в отношении обработки персональных данных</h1>
+      <p class="last-updated">Последнее обновление: [Дата]</p>
     </header>
 
     <section>
-        <h2>1. Общие положения</h2>
-        <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки и меры по обеспечению безопасности данных на сайте салона красоты <strong>«Клэр»</strong> (далее — Оператор).</p>
+      <h2>1. Общие положения</h2>
+      <p>Настоящая Политика в отношении обработки персональных данных определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые [Оператор] (далее — Оператор) при использовании сайта салона красоты «Клэр».</p>
+      <p>Оператор исходит из необходимости соблюдения прав и свобод человека и гражданина при обработке его персональных данных и руководствуется Конституцией Российской Федерации, Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных» и иными применимыми нормативными актами Российской Федерации.</p>
     </section>
 
     <section>
-        <h2>2. Какие данные мы собираем</h2>
-        <p>Сайт не собирает данные, позволяющие напрямую идентифицировать личность пользователя (ФИО, номера телефонов, адреса электронной почты), так как не содержит форм обратной связи.</p>
-        <p>Оператор собирает и обрабатывает только обезличенные технические данные о посетителях (в т.ч. файлы «cookie», IP-адреса, данные о браузере) с помощью сервисов интернет-статистики (Яндекс Метрика и др.).</p>
+      <h2>2. Сведения об Операторе</h2>
+      <p>Оператор: [Оператор]<br />ИНН: [ИНН]<br />ОГРНИП/ОГРН: [ОГРНИП/ОГРН]<br />Адрес: [Адрес]<br />Телефон: [Телефон]<br />E-mail: [E-mail]</p>
     </section>
 
     <section>
-        <h2>3. Цели обработки данных</h2>
-        <p>Обезличенные данные пользователей собираются исключительно для анализа работы сайта, улучшения его качества и оценки эффективности рекламных кампаний.</p>
+      <h2>3. Какие данные обрабатываются</h2>
+      <p>Сайт не содержит форм обратной связи, регистрации, личного кабинета и онлайн-оплаты, в связи с чем Оператор не осуществляет через сайт сбор персональных данных, которые пользователь вводит самостоятельно.</p>
+      <p>При посещении сайта автоматически могут обрабатываться следующие данные:</p>
+      <ul>
+        <li>IP-адрес;</li>
+        <li>данные файлов cookie;</li>
+        <li>технические параметры браузера и устройства;</li>
+        <li>сведения о действиях пользователя на сайте;</li>
+        <li>дата и время посещения;</li>
+        <li>адреса запрашиваемых страниц;</li>
+        <li>источник перехода на сайт;</li>
+        <li>данные, собираемые сервисами интернет-статистики, включая Яндекс.Метрику.</li>
+      </ul>
     </section>
 
     <section>
-        <h2>4. Сторонние сервисы и ссылки</h2>
-        <p>На сайте размещены ссылки и кнопки для перехода в сторонние приложения и мессенджеры (ВКонтакте и др.). Оператор не несет ответственности за сбор и обработку персональных данных этими сервисами. При переходе по ссылкам пользователю рекомендуется ознакомиться с политикой конфиденциальности соответствующих платформ.</p>
+      <h2>4. Цели обработки персональных данных</h2>
+      <p>Оператор обрабатывает указанные данные в следующих целях:</p>
+      <ul>
+        <li>обеспечение корректной и безопасной работы сайта;</li>
+        <li>анализ посещаемости сайта;</li>
+        <li>улучшение структуры, содержания и удобства сайта;</li>
+        <li>оценка эффективности рекламных кампаний и каналов продвижения.</li>
+      </ul>
     </section>
 
     <section>
-        <h2>5. Заключительные положения</h2>
-        <p>Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору по телефону: <strong>8 (953) 578-64-01</strong> или по адресу: <strong>г. Нижний Новгород, пл. Комсомольская, 10/1, 1 этаж</strong>.</p>
-        
-        <div class="requisites">
-            <p><strong>Реквизиты Оператора:</strong><br>
-            ИП Лябина Елена Александровна<br>
-            ИНН: [Номер]<br>
-            ОГРН: [Номер]</p>
-            <p style="font-size: 12px; color: #999;">* Пожалуйста, замените [Номер] на актуальные данные вашей регистрации.</p>
-        </div>
+      <h2>5. Правовые основания обработки персональных данных</h2>
+      <p>Правовыми основаниями обработки персональных данных являются:</p>
+      <ul>
+        <li>Федеральный закон от 27.07.2006 № 152-ФЗ «О персональных данных»;</li>
+        <li>согласие пользователя на обработку персональных данных, выражаемое посредством продолжения использования сайта, если на сайте реализовано уведомление об использовании файлов cookie;</li>
+        <li>законные интересы Оператора, связанные с обеспечением функционирования сайта, в объёме, не нарушающем права и свободы пользователя.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>6. Использование файлов cookie и сервисов аналитики</h2>
+      <p>На сайте используются файлы cookie и сервисы веб-аналитики, включая Яндекс.Метрику, которые позволяют получать техническую информацию о посещениях сайта, действиях пользователей, характеристиках устройств и браузеров, источниках переходов и иных параметрах взаимодействия с сайтом.</p>
+      <p>Пользователь может изменить настройки использования файлов cookie в своём браузере. Отключение cookie может повлиять на корректность работы отдельных элементов сайта.</p>
+    </section>
+
+    <section>
+      <h2>7. Передача данных третьим лицам</h2>
+      <p>Оператор может предоставлять доступ к данным лицам, обеспечивающим работу сайта, хостинга, сервисов аналитики и технического сопровождения, только в объёме, необходимом для достижения указанных целей и при соблюдении требований законодательства Российской Федерации.</p>
+      <p>При переходе по ссылкам на сторонние сайты, социальные сети, мессенджеры и иные платформы пользователь покидает сайт Оператора. Обработка персональных данных на таких ресурсах осуществляется по правилам соответствующих владельцев сервисов, и Оператор не несёт ответственности за их действия.</p>
+    </section>
+
+    <section>
+      <h2>8. Трансграничная передача персональных данных</h2>
+      <p>Оператор не осуществляет трансграничную передачу персональных данных.</p>
+    </section>
+
+    <section>
+      <h2>9. Сроки обработки и хранения персональных данных</h2>
+      <p>Персональные данные обрабатываются и хранятся не дольше, чем это требуется для достижения целей обработки, если иной срок не установлен законодательством Российской Федерации.</p>
+    </section>
+
+    <section>
+      <h2>10. Права субъекта персональных данных</h2>
+      <p>Пользователь имеет право:</p>
+      <ul>
+        <li>получать сведения, касающиеся обработки его персональных данных;</li>
+        <li>требовать уточнения, блокирования или уничтожения персональных данных в случаях, предусмотренных законодательством Российской Федерации;</li>
+        <li>отозвать согласие на обработку персональных данных;</li>
+        <li>обжаловать действия или бездействие Оператора в уполномоченный орган или в судебном порядке.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>11. Меры по защите персональных данных</h2>
+      <p>Оператор принимает необходимые правовые, организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа, уничтожения, изменения, блокирования, копирования, предоставления, распространения, а также от иных неправомерных действий.</p>
+    </section>
+
+    <section>
+      <h2>12. Обращения по вопросам обработки персональных данных</h2>
+      <p>По всем вопросам, связанным с обработкой персональных данных, пользователь может обратиться к Оператору:</p>
+      <ul>
+        <li>по телефону: [Телефон];</li>
+        <li>по электронной почте: [E-mail];</li>
+        <li>по адресу: [Адрес].</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>13. Заключительные положения</h2>
+      <p>Оператор вправе вносить изменения в настоящую Политику. Актуальная редакция Политики размещается в свободном доступе на сайте.</p>
     </section>
 
     <footer>
-        <p>© 2026 Салон красоты «Клэр». Все права защищены.</p>
+      <p>© 2026 Салон красоты «Клэр». Все права защищены.</p>
     </footer>
-</div>
-
+  </div>
 </body>
 </html>

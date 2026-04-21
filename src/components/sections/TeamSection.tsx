@@ -60,8 +60,10 @@ export const TeamSection = () => {
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-5 shadow-sm group-hover:shadow-xl transition-all duration-300">
                   <img
                     src={member.image}
-                    alt={member.name}
+                    alt={`${member.name} — ${member.role}`}
                     className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
                   />
                   
                   {/* Status Badge */}

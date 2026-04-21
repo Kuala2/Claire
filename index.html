@@ -1,10 +1,85 @@
-<!doctype html>
-<html lang="en">
+﻿<!doctype html>
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" type="image/png" href="/assets/Logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Клэр - Уютный салон красоты</title>
+
+    <title>Салон красоты «Клэр» в Нижнем Новгороде — метро Ленинская</title>
+    <meta
+      name="description"
+      content="Салон красоты «Клэр» в Нижнем Новгороде: парикмахерские услуги, ногтевой сервис, косметология, перманентный макияж и массаж. 5 минут от метро Ленинская."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" id="canonical-link" />
+    <meta name="theme-color" content="#c102b0" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="Салон красоты «Клэр» в Нижнем Новгороде" />
+    <meta
+      property="og:description"
+      content="Парикмахерские услуги, маникюр, педикюр, косметология, перманентный макияж и массаж рядом с метро Ленинская."
+    />
+    <meta property="og:url" id="og-url" content="" />
+    <meta property="og:image" content="/assets/Logo.png" />
+    <meta property="og:image:alt" content="Логотип салона красоты Клэр" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Салон красоты «Клэр» в Нижнем Новгороде" />
+    <meta
+      name="twitter:description"
+      content="Премиальный сервис и профессиональные мастера рядом с метро Ленинская."
+    />
+    <meta name="twitter:image" content="/assets/Logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/assets/Background.png" fetchpriority="high" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "Салон красоты «Клэр»",
+        "telephone": "+7-953-578-64-01",
+        "image": "/assets/Logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "пл. Комсомольская, 10/1",
+          "addressLocality": "Нижний Новгород",
+          "addressCountry": "RU"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "10:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday", "Sunday"],
+            "opens": "10:00",
+            "closes": "17:00"
+          }
+        ],
+        "sameAs": [
+          "https://vk.com/id504464826",
+          "https://max.ru/u/f9LHodD0cOKshNQKE7nF-JksmpTaVOEdjamLbywwhNPVRrG8RVbj8O-jJvw"
+        ]
+      }
+    </script>
+    <script>
+      (function () {
+        var pageUrl = window.location.origin + window.location.pathname;
+        var canonical = document.getElementById("canonical-link");
+        var ogUrl = document.getElementById("og-url");
+        if (canonical) canonical.setAttribute("href", pageUrl);
+        if (ogUrl) ogUrl.setAttribute("content", pageUrl);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

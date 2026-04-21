@@ -81,6 +81,8 @@ export const ServicesPricingSection = () => {
                       src={category.image}
                       alt={category.category}
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
 
@@ -138,4 +140,3 @@ export const ServicesPricingSection = () => {
     </section>
   );
 };
-

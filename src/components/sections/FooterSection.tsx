@@ -11,7 +11,10 @@ export const FooterSection = () => {
               {companyInfo.name}
             </span>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Уютный салон красоты с передовыми процедурами и высоким сервисом.
+              Салон красоты в Нижнем Новгороде: парикмахерские услуги, маникюр, педикюр, брови, перманентный макияж, депиляция, пирсинг, ресницы, эстетическая косметология и массаж. 5 минут от метро Ленинская.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Пл. Комсомольская, рядом с ТЦ «Комсомолка».
             </p>
 
           </div>
@@ -33,7 +36,7 @@ export const FooterSection = () => {
               <li className="flex items-center gap-3 text-gray-400 group">
                 <Phone size={20} className="flex-shrink-0 text-primary" />
                 <a href={`tel:${companyInfo.phone}`} className="hover:text-white transition-colors font-medium">
-                  {companyInfo.phone}
+                  Запись по телефону: {companyInfo.phone}
                 </a>
               </li>
             </ul>

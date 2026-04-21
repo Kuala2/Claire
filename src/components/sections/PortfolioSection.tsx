@@ -18,6 +18,24 @@ const categories = [
   { id: 'pierce', label: 'Пирсинг', prefix: 'c' },
 ];
 
+const getPortfolioAlt = (src: string): string => {
+  const filename = src.split('/').pop() ?? "";
+  const match = filename.match(/^([a-z]+)(\d+)\.jpg$/i);
+  const prefix = match?.[1]?.toLowerCase() ?? "";
+  const index = match?.[2] ?? "";
+
+  const baseByPrefix: Record<string, string> = {
+    p: "Парикмахерские услуги в салоне Клэр в Нижнем Новгороде",
+    n: "Ногтевой сервис в салоне Клэр в Нижнем Новгороде",
+    m: "Косметология в салоне Клэр в Нижнем Новгороде",
+    pm: "Перманентный макияж в салоне Клэр в Нижнем Новгороде",
+    c: "Пирсинг в салоне Клэр в Нижнем Новгороде",
+  };
+
+  const base = baseByPrefix[prefix] ?? "Пример работы мастеров салона Клэр";
+  return index ? `${base}, пример ${index}` : base;
+};
+
 /** Returns how many items are visible based on container width, matching Tailwind breakpoints */
 const getVisibleCount = (containerWidth: number): number => {
   if (containerWidth >= 768) return 3; // md and above
@@ -126,7 +144,7 @@ const Carousel = ({ images, type }: { images: string[], type: 'sq' | 'rect' }) =
               <div className="w-full h-full overflow-hidden rounded-[2.5rem] shadow-lg bg-gray-100">
                 <img
                   src={src}
-                  alt="Portfolio"
+                  alt={getPortfolioAlt(src)}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   loading="lazy"
                 />
@@ -180,7 +198,7 @@ export const PortfolioSection = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Наши работы
+            Примеры работ мастеров салона Клэр
           </h2>
           <p className="mt-4 text-lg text-gray-600">Результаты наших мастеров</p>
           

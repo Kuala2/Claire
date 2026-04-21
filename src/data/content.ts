@@ -48,7 +48,7 @@ export const teamContent = {
     },
     {
       name: "Светлана",
-      role: "Стилист-колорист премиум-класса",
+      role: "Топ - мастер\nПарикмахер - колорист",
       image: "/assets/2M.png",
       experience: "Мастер-эксперт"
     },
@@ -60,7 +60,7 @@ export const teamContent = {
     },
     {
       name: "Татьяна",
-      role: "Премиум-мастер ногтевого сервиса",
+      role: "Топ-мастер ногтевого сервиса\nс медицинским образованием",
       image: "/assets/4M.png",
       experience: "Мастер высшей категории"
     },
@@ -84,7 +84,7 @@ export const teamContent = {
     },
     {
       name: "Татьяна",
-      role: "Топ-мастер\nногтевого сервиса",
+      role: "Мастер ногтевого сервиса",
       image: "/assets/8M.png",
       experience: "Топ-специалист"
     },
