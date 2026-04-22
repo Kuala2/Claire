@@ -33,17 +33,17 @@ export const HeroSection = () => {
 
           <motion.h1
             className="mx-auto mt-10 sm:mt-12 lg:mt-20 max-w-5xl font-sans text-3xl sm:text-7xl font-extrabold tracking-tight text-white pb-2 leading-[1.1] sm:leading-tight drop-shadow-md sm:drop-shadow-2xl px-2 sm:px-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35 }}
           >
             Ваше <span className="text-primary">преображение</span> рядом с метро Ленинская
           </motion.h1>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35, delay: 0.05 }}
             className="mt-5 sm:mt-6 inline-flex items-center gap-2 sm:gap-5 px-3 py-1.5 sm:px-7 sm:py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-lg"
           >
             <div className="flex items-center gap-0.5 sm:gap-1">
@@ -61,7 +61,15 @@ export const HeroSection = () => {
             </span>
 
             <div className="flex items-center gap-1.5 bg-black/20 px-2 py-1 sm:px-3 sm:py-1.5 rounded border border-white/10">
-              <img src="/assets/2gis_logo.png" alt="2GIS" className="h-3 w-3 sm:h-5 sm:w-5 object-contain" />
+              <img
+                src="/assets/2gis_logo.png"
+                alt="2GIS"
+                width={20}
+                height={20}
+                fetchPriority="high"
+                decoding="async"
+                className="h-3 w-3 sm:h-5 sm:w-5 object-contain"
+              />
               <span className="text-white font-bold text-xs sm:text-base tracking-tighter">2ГИС</span>
             </div>
           </motion.div>
@@ -69,9 +77,9 @@ export const HeroSection = () => {
 
         <motion.div
           className="mt-16 sm:mt-20 lg:mt-24 w-full flex items-center justify-center gap-x-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.35, delay: 0.1 }}
         >
           <div className="flex flex-col items-center gap-3 sm:gap-4">
             <Button onClick={openBookingModal} size="lg" className="w-full sm:w-auto lg:h-16 lg:px-14 lg:text-xl shadow-xl hover:scale-105 transition-transform duration-300">

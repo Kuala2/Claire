@@ -31,7 +31,15 @@ export const Header = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex py-2 items-center justify-between">
             <div className="flex-shrink-0 flex items-center gap-2">
-              <img src="/assets/Logo.png" alt={companyInfo.name} className="h-14 sm:h-24 w-auto object-contain transition-transform hover:scale-105" />
+              <img
+                src="/assets/Logo.png"
+                alt={companyInfo.name}
+                width={96}
+                height={96}
+                fetchPriority="high"
+                decoding="async"
+                className="h-14 sm:h-24 w-auto object-contain transition-transform hover:scale-105"
+              />
               <span className="text-xl sm:text-3xl font-serif font-medium tracking-wide text-white">
                 {companyInfo.name}
               </span>
@@ -89,7 +97,14 @@ export const Header = () => {
             <nav className="flex flex-col items-center w-full max-w-xs">
               {/* Logo section - more compact */}
               <div className="mb-8 text-center">
-                <img src="/assets/Logo.png" alt={companyInfo.name} className="h-16 w-auto mx-auto mb-2" />
+                <img
+                  src="/assets/Logo.png"
+                  alt={companyInfo.name}
+                  width={64}
+                  height={64}
+                  decoding="async"
+                  className="h-16 w-auto mx-auto mb-2"
+                />
                 <h2 className="text-lg font-serif font-medium text-white/50 tracking-[0.2em] uppercase">
                   {companyInfo.name}
                 </h2>
