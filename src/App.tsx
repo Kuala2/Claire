@@ -8,6 +8,7 @@ import { FAQSection } from "./components/sections/FAQSection";
 import { CTASection } from "./components/sections/CTASection";
 import { MapSection } from "./components/sections/MapSection";
 import { FooterSection } from "./components/sections/FooterSection";
+import { CookieBanner } from "./components/ui/CookieBanner";
 
 import { BookingProvider } from "./context/BookingContext";
 
@@ -27,6 +28,7 @@ function App() {
           <MapSection />
         </main>
         <FooterSection />
+        <CookieBanner />
       </div>
     </BookingProvider>
   );
