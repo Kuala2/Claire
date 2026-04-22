@@ -10,10 +10,8 @@ export const TeamSection = () => {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
       const totalItems = teamContent.members.length;
-      // Precision calculation for active index
       const maxScroll = scrollWidth - clientWidth;
       if (maxScroll <= 0) return;
-      
       const index = Math.round((scrollLeft / maxScroll) * (totalItems - 1));
       if (index !== activeIndex) setActiveIndex(index);
     }
@@ -43,7 +41,7 @@ export const TeamSection = () => {
         </div>
 
         <div className="relative">
-          <div 
+          <div
             ref={scrollRef}
             onScroll={handleScroll}
             className="flex lg:grid lg:grid-cols-3 gap-6 lg:gap-12 overflow-x-auto lg:overflow-visible pb-8 lg:pb-0 -mx-4 px-4 lg:mx-0 lg:px-0 snap-x snap-mandatory no-scrollbar"
@@ -60,16 +58,17 @@ export const TeamSection = () => {
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-5 shadow-sm group-hover:shadow-xl transition-all duration-300">
                   <img
                     src={member.image}
-                    alt={`${member.name} — ${member.role}`}
+                    alt={`${member.name} - ${member.role}`}
                     className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                     decoding="async"
                   />
-                  
-                  {/* Status Badge */}
-                  {member.name === "Лябина Елена" && (
+
+                  {member.name === "\u041b\u044f\u0431\u0438\u043d\u0430 \u0415\u043b\u0435\u043d\u0430" && (
                     <div className="absolute bottom-0 left-0 right-0 bg-primary/90 text-white py-3 text-center backdrop-blur-sm z-10 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2">
-                       <span className="text-sm font-bold uppercase tracking-widest">Руководитель студии</span>
+                      <span className="text-sm font-bold uppercase tracking-widest">
+                        {"\u0420\u0443\u043a\u043e\u0432\u043e\u0434\u0438\u0442\u0435\u043b\u044c \u0441\u0442\u0443\u0434\u0438\u0438"}
+                      </span>
                     </div>
                   )}
 
@@ -79,25 +78,20 @@ export const TeamSection = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-col flex-grow min-h-[120px]">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-primary font-medium whitespace-pre-line leading-snug text-sm lg:text-[15px]">
-                    {member.role}
-                  </p>
+                  <p className="text-primary font-medium whitespace-pre-line leading-snug text-sm lg:text-[15px]">{member.role}</p>
                 </div>
               </motion.div>
             ))}
           </div>
-          
-          {/* Mobile Scroll Indicator */}
+
           <div className="flex justify-center gap-2 mt-4 lg:hidden">
             {teamContent.members.map((_, i) => (
-              <div 
-                key={i} 
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === activeIndex ? "w-6 bg-primary" : "w-1.5 bg-gray-300"
-                }`} 
+              <div
+                key={i}
+                className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIndex ? "w-6 bg-primary" : "w-1.5 bg-gray-300"}`}
               />
             ))}
           </div>

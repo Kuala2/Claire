@@ -32,7 +32,7 @@ export const Header = () => {
           <div className="flex py-2 items-center justify-between">
             <div className="flex-shrink-0 flex items-center gap-2">
               <img
-                src="/assets/Logo.png"
+                src="/assets/Logo.webp"
                 alt={companyInfo.name}
                 width={96}
                 height={96}
@@ -98,7 +98,7 @@ export const Header = () => {
               {/* Logo section - more compact */}
               <div className="mb-8 text-center">
                 <img
-                  src="/assets/Logo.png"
+                  src="/assets/Logo.webp"
                   alt={companyInfo.name}
                   width={64}
                   height={64}

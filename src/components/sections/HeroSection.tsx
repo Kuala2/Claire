@@ -15,7 +15,7 @@ export const HeroSection = () => {
       <div
         className="absolute inset-0 z-0 bg-cover bg-[position:70%_top] sm:bg-[position:30%_20%]"
         style={{
-          backgroundImage: 'url("/assets/Background.png")',
+          backgroundImage: 'image-set(url("/assets/Background.webp") type("image/webp"), url("/assets/Background.png") type("image/png"))',
         }}
       />
 
@@ -62,7 +62,7 @@ export const HeroSection = () => {
 
             <div className="flex items-center gap-1.5 bg-black/20 px-2 py-1 sm:px-3 sm:py-1.5 rounded border border-white/10">
               <img
-                src="/assets/2gis_logo.png"
+                src="/assets/2gis_logo.webp"
                 alt="2GIS"
                 width={20}
                 height={20}

@@ -20,16 +20,16 @@ export interface ServiceCategory {
 
 // Map categories to existing assets
 const categoryImages: Record<string, string> = {
-  "ПАРИКМАХЕРСКИЕ УСЛУГИ": "/assets/1.png",
-  "МАНИКЮР": "/assets/2.png",
-  "ПЕДИКЮР": "/assets/3.png",
-  "БРОВИ": "/assets/4.png",
-  "ПЕРМАНЕНТНЫЙ МАКИЯЖ": "/assets/5.png",
-  "ДЕПИЛЯЦИЯ": "/assets/6.png",
-  "ПИРСИНГ": "/assets/7.png",
-  "РЕСНИЦЫ": "/assets/8.png",
-  "ЭСТЕТИЧЕСКАЯ КОСМЕТОЛОГИЯ": "/assets/9.png",
-  "МАССАЖ": "/assets/10.png",
+  "ПАРИКМАХЕРСКИЕ УСЛУГИ": "/assets/1.webp",
+  "МАНИКЮР": "/assets/2.webp",
+  "ПЕДИКЮР": "/assets/3.webp",
+  "БРОВИ": "/assets/4.webp",
+  "ПЕРМАНЕНТНЫЙ МАКИЯЖ": "/assets/5.webp",
+  "ДЕПИЛЯЦИЯ": "/assets/6.webp",
+  "ПИРСИНГ": "/assets/7.webp",
+  "РЕСНИЦЫ": "/assets/8.webp",
+  "ЭСТЕТИЧЕСКАЯ КОСМЕТОЛОГИЯ": "/assets/9.webp",
+  "МАССАЖ": "/assets/10.webp",
 };
 
 const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTBz8_iVYb0GNVTieZ-L-yZfL7lEwILS_pa57mmfu8FxDwOiYBjGMeGg8E4QMx_Qxj0KS-STnWeXKTz/pub?gid=0&single=true&output=csv';
@@ -103,7 +103,6 @@ const transformSheetData = (rows: RawSheetRow[]): ServiceCategory[] => {
   return Array.from(categoriesMap.entries()).map(([category, services]) => ({
     category,
     services,
-    image: categoryImages[category] || "/assets/1.png", // Fallback image
+    image: categoryImages[category] || "/assets/1.webp", // Fallback image
   }));
 };
-

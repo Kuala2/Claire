@@ -11,8 +11,8 @@ export const ServicesPricingSection = () => {
   const [expandedCategories, setExpandedCategories] = useState<number[]>([]);
 
   const toggleCategory = (idx: number) => {
-    setExpandedCategories(prev =>
-      prev.includes(idx) ? prev.filter(i => i !== idx) : [...prev, idx]
+    setExpandedCategories((prev) =>
+      prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
     );
   };
 
@@ -21,25 +21,22 @@ export const ServicesPricingSection = () => {
       <section id="services" className="py-24 bg-background overflow-hidden min-h-[600px] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-gray-500 font-medium italic">Загружаем услуги...</p>
+          <p className="text-gray-500 font-medium italic">
+            {"\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u0435\u043c \u0443\u0441\u043b\u0443\u0433\u0438..."}
+          </p>
         </div>
       </section>
     );
   }
 
-  if (categories.length === 0) {
-    return null;
-  }
+  if (categories.length === 0) return null;
 
   return (
     <section id="services" className="py-24 bg-background overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-12">
-            {servicesContent.title}
-          </h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-12">{servicesContent.title}</h2>
 
-          {/* Category Tabs */}
           <div className="flex sm:flex-wrap sm:justify-center overflow-x-auto no-scrollbar gap-3 sm:gap-4 mb-12 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory">
             {categories.map((category, idx) => (
               <button
@@ -88,31 +85,27 @@ export const ServicesPricingSection = () => {
 
                   <div className="p-4 sm:p-10 lg:p-12 bg-white">
                     <div className="space-y-2 sm:space-y-4">
-                      {visibleServices.map((service, s_idx) => (
+                      {visibleServices.map((service, sIdx) => (
                         <motion.div
-                          key={s_idx}
+                          key={sIdx}
                           className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-6 pb-4 mb-4 border-b border-gray-200 last:border-0 last:pb-0 last:mb-0 hover:bg-gray-50/20 transition-colors rounded-xl px-2 sm:px-4 -mx-1 sm:-mx-4"
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.1 + (s_idx * 0.05) }}
+                          transition={{ delay: 0.1 + sIdx * 0.05 }}
                         >
-                          {/* Блок с названием услуги */}
                           <div className="flex-1 text-[13px] sm:text-lg font-semibold text-gray-800 leading-tight min-w-0">
                             {service.name}
                           </div>
 
-                          {/* Блок с ценой и кнопкой */}
                           <div className="flex items-center justify-between w-full sm:w-auto gap-4 sm:gap-8 shrink-0">
-                            <div className="text-gray-900 font-bold text-[13px] sm:text-xl whitespace-nowrap">
-                              {service.price}
-                            </div>
+                            <div className="text-gray-900 font-bold text-[13px] sm:text-xl whitespace-nowrap">{service.price}</div>
                             <Button
                               href="#booking"
                               size="sm"
                               variant="outline"
                               className="rounded-full px-4 py-1.5 h-auto text-[11px] sm:text-sm font-bold border-primary/20 text-primary hover:bg-primary hover:text-white transition-all whitespace-nowrap shadow-sm"
                             >
-                              Запись
+                              {"\u0417\u0430\u043f\u0438\u0441\u044c"}
                             </Button>
                           </div>
                         </motion.div>
@@ -126,7 +119,9 @@ export const ServicesPricingSection = () => {
                           onClick={() => toggleCategory(idx)}
                           className="text-primary hover:text-primary-hover font-bold text-lg underline underline-offset-8 decoration-2 decoration-primary/30 hover:decoration-primary transition-all"
                         >
-                          {isExpanded ? "Скрыть полный прайс" : "Показать все услуги"}
+                          {isExpanded
+                            ? "\u0421\u043a\u0440\u044b\u0442\u044c \u043f\u043e\u043b\u043d\u044b\u0439 \u043f\u0440\u0430\u0439\u0441"
+                            : "\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0432\u0441\u0435 \u0443\u0441\u043b\u0443\u0433\u0438"}
                         </Button>
                       </div>
                     )}

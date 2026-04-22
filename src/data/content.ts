@@ -43,55 +43,55 @@ export const teamContent = {
     {
       name: "Лябина Елена",
       role: "Специалист по пирсингу и\nперманентному макияжу",
-      image: "/assets/1M.jpg",
+      image: "/assets/1M.webp",
       experience: "Основатель студии"
     },
     {
       name: "Светлана",
       role: "Топ - мастер\nПарикмахер - колорист",
-      image: "/assets/2M.png",
+      image: "/assets/2M.webp",
       experience: "Мастер-эксперт"
     },
     {
       name: "Марианна",
       role: "Косметолог",
-      image: "/assets/3M.png",
+      image: "/assets/3M.webp",
       experience: "Специалист по уходу"
     },
     {
       name: "Татьяна",
       role: "Топ-мастер ногтевого сервиса\nс медицинским образованием",
-      image: "/assets/4M.png",
+      image: "/assets/4M.webp",
       experience: "Мастер высшей категории"
     },
     {
       name: "Анна",
       role: "Парикмахер-универсал • Бровист",
-      image: "/assets/5M.png",
+      image: "/assets/5M.webp",
       experience: "Универсальный специалист"
     },
     {
       name: "Юлия",
       role: "Парикмахер-универсал • Бровист",
-      image: "/assets/6M.png",
+      image: "/assets/6M.webp",
       experience: "Универсальный специалист"
     },
     {
       name: "Ольга",
       role: "Парикмахер-универсал",
-      image: "/assets/7M.png",
+      image: "/assets/7M.webp",
       experience: "Мастер с опытом"
     },
     {
       name: "Татьяна",
       role: "Мастер ногтевого сервиса",
-      image: "/assets/8M.png",
+      image: "/assets/8M.webp",
       experience: "Топ-специалист"
     },
     {
       name: "Сергей",
       role: "Специалист по массажу",
-      image: "/assets/9M.png",
+      image: "/assets/9M.webp",
       experience: "Мастер массажа"
     }
   ]

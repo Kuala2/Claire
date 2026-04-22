@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run prerender",
+    "build:client": "tsc -b && vite build",
+    "prerender": "vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -31,6 +34,7 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
     "postcss": "^8.5.9",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.19",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.0",

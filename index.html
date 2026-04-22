@@ -48,7 +48,7 @@
       content="Салон красоты «Клэр» в Нижнем Новгороде: парикмахерские услуги, ногтевой сервис, косметология, перманентный макияж и массаж. 5 минут от метро Ленинская."
     />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" id="canonical-link" />
+    <link rel="canonical" id="canonical-link" href="https://kuala2.github.io/Claire/" />
     <meta name="theme-color" content="#c102b0" />
 
     <meta property="og:type" content="website" />
@@ -58,9 +58,10 @@
       property="og:description"
       content="Парикмахерские услуги, маникюр, педикюр, косметология, перманентный макияж и массаж рядом с метро Ленинская."
     />
-    <meta property="og:url" id="og-url" content="" />
-    <meta property="og:image" content="/assets/Logo.png" />
+    <meta property="og:url" id="og-url" content="https://kuala2.github.io/Claire/" />
+    <meta property="og:image" content="https://kuala2.github.io/Claire/assets/Logo.png" />
     <meta property="og:image:alt" content="Логотип салона красоты Клэр" />
+    <meta property="og:site_name" content="Салон красоты «Клэр»" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Салон красоты «Клэр» в Нижнем Новгороде" />
@@ -68,7 +69,7 @@
       name="twitter:description"
       content="Премиальный сервис и профессиональные мастера рядом с метро Ленинская."
     />
-    <meta name="twitter:image" content="/assets/Logo.png" />
+    <meta name="twitter:image" content="https://kuala2.github.io/Claire/assets/Logo.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,17 +77,29 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;500;600;700&display=swap"
     />
-    <link rel="preload" as="image" href="/assets/Background.png" fetchpriority="high" />
-    <link rel="preload" as="image" href="/assets/Logo.png" fetchpriority="high" />
-    <link rel="preload" as="image" href="/assets/2gis_logo.png" />
+    <link rel="preload" as="image" href="/assets/Background.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/Logo.webp" type="image/webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/2gis_logo.webp" type="image/webp" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BeautySalon",
         "name": "Салон красоты «Клэр»",
+        "url": "https://kuala2.github.io/Claire/",
+        "priceRange": "₽₽",
         "telephone": "+7-953-578-64-01",
-        "image": "/assets/Logo.png",
+        "image": "https://kuala2.github.io/Claire/assets/Logo.png",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 56.295449,
+          "longitude": 43.941242
+        },
+        "hasMap": "https://yandex.ru/maps/-/CHQ4NN-z",
+        "areaServed": {
+          "@type": "City",
+          "name": "Нижний Новгород"
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "пл. Комсомольская, 10/1",
@@ -110,6 +123,46 @@
         "sameAs": [
           "https://vk.com/id504464826",
           "https://max.ru/u/f9LHodD0cOKshNQKE7nF-JksmpTaVOEdjamLbywwhNPVRrG8RVbj8O-jJvw"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Как к вам записаться?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Мы работаем по предварительной записи. Записаться можно онлайн на сайте или по телефону 8 (953) 578-64-01."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли прийти с животным?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "К сожалению, в салоне действует политика No Pets для безопасности и комфорта всех клиентов."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как можно оплатить услуги?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Доступна оплата картой, наличными, переводом на расчетный счет и по QR-коду через СБП."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Где вы находитесь?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Наш адрес: Нижний Новгород, площадь Комсомольская, 10/1, 1 этаж. Мы находимся в 5 минутах пешком от метро Ленинская."
+            }
+          }
         ]
       }
     </script>

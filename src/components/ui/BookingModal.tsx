@@ -22,58 +22,49 @@ export const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
             onClick={onClose}
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className="relative w-full max-w-sm bg-white rounded-[2.5rem] p-8 shadow-2xl text-center overflow-hidden"
           >
-            {/* Close Button */}
             <button
               onClick={onClose}
               className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 transition-colors"
+              aria-label={"\u0417\u0430\u043a\u0440\u044b\u0442\u044c"}
             >
               <X size={24} />
             </button>
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Записаться онлайн</h3>
-            <p className="text-gray-600 mb-8">Выберите удобный способ для связи с салоном</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              {"\u0417\u0430\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043e\u043d\u043b\u0430\u0439\u043d"}
+            </h3>
+            <p className="text-gray-600 mb-8">
+              {"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0443\u0434\u043e\u0431\u043d\u044b\u0439 \u0441\u043f\u043e\u0441\u043e\u0431 \u0434\u043b\u044f \u0441\u0432\u044f\u0437\u0438 \u0441 \u0441\u0430\u043b\u043e\u043d\u043e\u043c"}
+            </p>
 
             <div className="flex justify-center gap-8 mb-8">
-              <a
-                href={vkLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3"
-              >
+              <a href={vkLink} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-3">
                 <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#0077FF] text-white shadow-lg shadow-[#0077FF]/20 group-hover:scale-110 transition-transform duration-300">
                   <svg className="w-12 h-12 fill-white" viewBox="0 0 24 24">
                     <path d="M13.162 18.994c-6.09 0-9.564-4.172-9.71-11.117h3.047c.105 5.106 2.355 7.27 4.134 7.716V7.877h2.864v4.406c1.751-.186 3.608-2.186 4.232-4.406h2.864c-.463 2.768-2.511 4.768-4.004 5.811 1.493.687 3.847 2.418 4.774 5.306h-3.13c-.727-2.264-2.536-3.994-4.735-4.217v4.217h-1.136z" />
                   </svg>
                 </div>
-                <span className="font-semibold text-gray-700">ВКонтакте</span>
+                <span className="font-semibold text-gray-700">{"\u0412\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0435"}</span>
               </a>
 
-              <a
-                href={maxLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-center gap-3"
-              >
+              <a href={maxLink} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-3">
                 <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-white overflow-hidden shadow-lg border border-gray-100 group-hover:scale-110 transition-transform duration-300">
-                  <img src="/assets/Max.png" alt="Макс" className="w-full h-full object-cover" />
+                  <img src="/assets/Max.webp" alt={"\u041c\u0430\u043a\u0441"} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
-                <span className="font-semibold text-gray-700">Макс</span>
+                <span className="font-semibold text-gray-700">{"\u041c\u0430\u043a\u0441"}</span>
               </a>
             </div>
 
             <div className="pt-6 border-t border-gray-100">
-              <p className="text-sm text-gray-400 mb-2">Или позвоните нам</p>
-              <a
-                href={`tel:${companyInfo.phone}`}
-                className="text-xl font-bold text-gray-900 hover:text-primary transition-colors"
-              >
+              <p className="text-sm text-gray-400 mb-2">{"\u0418\u043b\u0438 \u043f\u043e\u0437\u0432\u043e\u043d\u0438\u0442\u0435 \u043d\u0430\u043c"}</p>
+              <a href={`tel:${companyInfo.phone}`} className="text-xl font-bold text-gray-900 hover:text-primary transition-colors">
                 {companyInfo.phone}
               </a>
             </div>

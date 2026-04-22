@@ -52,7 +52,7 @@ export const CTASection = () => {
                 className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white overflow-hidden hover:scale-110 transition-all duration-300 shadow-sm border border-gray-100"
                 title="Национальный мессенджер Макс"
               >
-                <img src="/assets/Max.png" alt="Макс" className="w-full h-full object-cover" />
+                <img src="/assets/Max.webp" alt="Макс" className="w-full h-full object-cover" loading="lazy" decoding="async" />
               </a>
             </div>
 
