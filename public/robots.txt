@@ -4,4 +4,4 @@ Allow: /
 Disallow: /node_modules/
 Disallow: /src/
 
-Sitemap: https://kuala2.github.io/Claire/sitemap.xml
+Sitemap: https://claire-nn.ru/sitemap.xml
